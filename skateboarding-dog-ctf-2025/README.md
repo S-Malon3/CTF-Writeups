@@ -16,7 +16,7 @@ There were a few challenge types at the event, the ones I attempted were:
  - [Long String of Flags](./long-string-of-flags)
 
 ### CRY
- - [supeRSAnic](./superRSAnic)
+ - [supeRSAnic](./supeRSAnic)
 
 ### REV
  - [Stop Callin](./stop-callin)
