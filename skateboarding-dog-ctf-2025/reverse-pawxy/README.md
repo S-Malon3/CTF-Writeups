@@ -47,15 +47,5 @@ GET /healthcheck HTTP/1.1
 Host: sk8.dog
 ```
 **In Theory:** The proxy might honor `Transfer-Encoding: chunked` and see the request ending after 0, while the back end might honor `Content-Length: 6` and treat the second GET request as a second request.
-```Mermaid
-flowchart  TD
 
-A[Attacker] -->|1: POST + smuggled GET| B[Reverse  Pawxy]
-
-B[Reverse  Pawxy] -->|2: Reject  POST| A[Attacker]
-
-B[Reverse  pawxy] -->|3: Forward  Smuggled  GET| C[API  Server]
-
-C[API  Server] -->|4: Respond  to  smuggled  GET bypassing Proxy| A
-```
 I was not able to find a payload which worked, I also attempted TE:CL _(Transfer Encoding vs Content Length)_ but also to no success.
