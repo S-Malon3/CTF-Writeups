@@ -49,3 +49,26 @@ Host: sk8.dog
 **In Theory:** The proxy might honor `Transfer-Encoding: chunked` and see the request ending after 0, while the back end might honor `Content-Length: 6` and treat the second GET request as a second request.
 
 I was not able to find a payload which worked, I also attempted TE:CL _(Transfer Encoding vs Content Length)_ but also to no success.
+
+## The missing piece
+The solution to this challenge ended up revolving around Path Traversal using a Path Normalisation bypass
+
+### The Attack Breakdown
+```bash
+curl --path-as-is -i -s -k 'https://web-reverse-pawxy-3b34be52c2cc.c.sk8.dog/healthcheck%2fH4CK/../flag'
+```
+1. `--path-as-is` Prevents curl from normalising the path before sending.
+2. `-i` include HTTP Response headers in output
+3. `-s` hide progress bar, curl status messages, etc
+4. `-k` allow connection to SSL without certificate verification
+5. `%2fH4CK`:
+    1. `%2f` URL-encoded forward slash (`/`)
+    2. `H4CK` Dummy directory name, this does not matter, but without `%2fH4CK` the path `/healthcheck/..` gets turned to to `/healthcheck/..` which just returns to `index.html`.  With `healthcheck%2fH4CK/..` the path becomes `healthcheck/H4CK/..` which returns to the end servers root, and doing `healthcheck/H4ck/..` directly returns nothing, so there is a security mechanism in place preventing this which using encoded characters bypasses.
+6. `/flag` go to the flags directory, this successfully returns the flag.
+
+### Why I Missed This
+When I ran GoBuster, I ran it on `c.sk8.dog/` not `c.sk8.dog/healthcheck` therefore every directory I checked was being run from the web servers root, not against the API server through the Reverse Proxy, and therefore my GoBuster scan never interacted with the API Server beyond `/healthcheck.  With that in mind, the solution method of Path Traversal was too complex for GoBuster, but when GoBuster returned nothing I thought of this as a dead end.
+
+## Lessons Learned
+I did not know about the concept of Path Normalisation until this challenge, and the use of ``--path-as-is`` and encoded characters (`%2f`, `%5c`) are an effective tool for me to use going forwards.
+- GoBuster only shows hidden directories, not more advanced methods of Path Traversal, and I should not rule out an attack vector based off a single tools results.
