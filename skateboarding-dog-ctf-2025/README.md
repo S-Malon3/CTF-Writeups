@@ -1,6 +1,6 @@
 The Capture-the-Flag event at BSides Canberra 2025.  The atmosphere of the hall was fantastic, and I enjoyed talking with other competitors throughout the conference.
 
-In hindsight, my biggest takeaway was a lesson in prioritisation: I spent a significant amount of time stuck on two difficult challenges, "Logbook" and "Reverse Pawxy", when I could have earnt more points focusing on easier ones.  However, I believe how close I got to solving them felt like an achievement in itself given my experience level.
+In hindsight, my biggest takeaway was a lesson in prioritisation: I spent a significant amount of time stuck on two difficult challenges, "Logbook" and "Reverse Pawxy", when I could have earnt more points focusing on easier ones.  However, I believe how close I got to solving them felt like an achievement in itself given my experience level.  In particular, after seeing the solutions, I believe I could have solved SupeRSAnicV.2 and Fruit Shop which only 2 other people solved each if I had a better look at them, and looking at Fruit Shop more would of made me realise my approach to Logbook was wrong.
 
 There were a few challenge types at the event, the ones I attempted were:
  - **GAME:** Skateboarding Dog made a multiplayer game for the event where you played as a skateboarding dog.  There were flags hidden within the game, but skating around seeing other players, and even having the game streamed to the competition hall was so fun in itself, and made this CTF so unique.
