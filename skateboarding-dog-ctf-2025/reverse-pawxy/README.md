@@ -70,5 +70,5 @@ curl --path-as-is -i -s -k 'https://web-reverse-pawxy-3b34be52c2cc.c.sk8.dog/hea
 When I ran GoBuster, I ran it on `c.sk8.dog/` not `c.sk8.dog/healthcheck` therefore every directory I checked was being run from the web servers root, not against the API server through the Reverse Proxy, and therefore my GoBuster scan never interacted with the API Server beyond `/healthcheck.  With that in mind, the solution method of Path Traversal was too complex for GoBuster, but when GoBuster returned nothing I thought of this as a dead end.
 
 ## Lessons Learned
-I did not know about the concept of Path Normalisation until this challenge, and the use of ``--path-as-is`` and encoded characters (`%2f`, `%5c`) are an effective tool for me to use going forwards.
+- I did not know about the concept of Path Normalisation until this challenge, and the use of ``--path-as-is`` and encoded characters (`%2f`, `%5c`) are an effective tool for me to use going forwards.
 - GoBuster only shows hidden directories, not more advanced methods of Path Traversal, and I should not rule out an attack vector based off a single tools results.
