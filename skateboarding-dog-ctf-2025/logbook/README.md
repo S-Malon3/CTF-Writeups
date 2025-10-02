@@ -52,3 +52,9 @@ Currently, when I have both these injected on layout, I get redirected to a page
 Since I belive i'm defining `a.default.detectStore` properly, what's left for me to do is make it defined before the Shopify script which is still failing due to it not being defined.
 
 Looking back at the Shopify Code, I noticed it's an IIFE _(Immediately Involed Function Execution)_, which seems to be running on page load (before the logs are loaded).  So no matter what I do, I can't make my payloads in the logs execute before the Shopify code.  I tried subverting this by using `$(document).ready()` but to no success.  At this point I shifted focus to other challenges hoping I would come to a sudden realisation, but it never came.
+
+## The Solution
+The solution actually had nothing to do with the `a.default.detectStore`, as after the challenge I realised all the web challenges throw this error.  The solution revolves around Path Traversal into `/proc` to find a parent process ID, walking up that process tree to find the flag process and get it's UUID, and accessing the flag by that UUID from `/book/UUID`
+
+## Lessons Learned
+One thing I Learned from this CTF was I spent too much time on individual challenges rather then experiencing a wider variety of challenges, I believe if I looked at other challenges, I would of realised `a.default.detectStore` wasn't unique to this challenge and realised that was a false lead.
