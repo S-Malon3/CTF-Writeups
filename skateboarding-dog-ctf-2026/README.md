@@ -9,3 +9,7 @@ There were a few challenge types at the event, the ones I attempted were:
  - **CRYPT:** Cryptography based
  - **PWN:** Binary Exploitation
  - **WEB:** Web Based Hacking
+
+## Completed Challenges
+### WEB
+ - [guess type](./guess-type)
