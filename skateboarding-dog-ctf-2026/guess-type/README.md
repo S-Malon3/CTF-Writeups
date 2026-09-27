@@ -1,3 +1,5 @@
+_securing file uploads is easy when you have a rich standard library!_
+
 A WEB challenge involving a Flask server that hands out the flag on a successful file upload, provided the uploaded file passes three checks.
 
 **Note:** I did not finish this one myself. I got partway through before running out of time, and a teammate finished it off (on my session/access) while I wasn't at the keyboard. This writeup covers what I tried, and then the actual solve, worked out from the server source and the commands my teammate ran.

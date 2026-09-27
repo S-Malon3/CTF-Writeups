@@ -1,3 +1,5 @@
+_We just opened a new museum and need your help with finding the flag..._
+
 A WEB challenge presenting a small online gallery. Each piece is viewed at `{url}/n`, and the goal (as always) is to get the server to hand back the flag.
 
 ## Recon
