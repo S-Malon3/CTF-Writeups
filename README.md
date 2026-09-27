@@ -7,4 +7,5 @@ Rather then a showcase of perfect solves, this is more of a learning journal, an
 ---
 
 ## Events
+ - [Skateboarding Dog CTF 2026](./skateboarding-dog-ctf-2026)
  - [Skateboarding Dog CTF 2025](./skateboarding-dog-ctf-2025)
