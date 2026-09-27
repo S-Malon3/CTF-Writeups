@@ -13,3 +13,4 @@ There were a few challenge types at the event, the ones I attempted were:
 ## Completed Challenges
 ### WEB
  - [guess type](./guess-type)
+ - [museum](./museum)
