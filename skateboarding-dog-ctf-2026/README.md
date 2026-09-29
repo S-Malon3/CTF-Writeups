@@ -18,3 +18,5 @@ There were a few challenge types at the event, the ones I attempted were:
 ## Attempted
 ### PWN
  - [pawsix thread](./pawsix-thread)
+### CRYPT
+ - [inverse login](./inverseLogin/)
